@@ -1,4 +1,8 @@
 /* code css à faire */
+
+/* Ajout d'une règle CSS qui trouve tous les éléments de classe "menus" dans l'HTML et fixe 
+les propriétés correspondantes (width, height, border).*/
+/* Complément des règles pour le menu, ajout d'un fondu lors de l'ouverture du menu. */
 .menu {
     width: 100%;
     height: 100%;
@@ -7,12 +11,9 @@
     opacity: 0;
 }
 
+/*  */
 .menu:popover-open {
     opacity: 1;
-}
-
-html:has(.menu:popover-open) {
-    overflow: hidden;
 }
 
 @starting-style {
@@ -21,10 +22,17 @@ html:has(.menu:popover-open) {
     }
 }
 
+/* Empêcher le défilement lorsque le menu est ouvert */
+html:has(.menu:popover-open) {
+    overflow: hidden;
+}
+
+/* Changement d'apparence du bouton de fermeture */
 .burger {
     cursor: pointer;
 }
 
+/* Ajout d'une rotation pour le bouton de fermeture */
 @starting-style {
     .menu:popover-open .burger--close {
         transform: none;
@@ -36,6 +44,7 @@ html:has(.menu:popover-open) {
     transition: 400ms;
 }
 
+/* Respect des préférences de mouvement (désactivation des animations)*/
 @media (prefers-reduced-motion: reduce) {
     .menu,
     .menu .burger--close {
