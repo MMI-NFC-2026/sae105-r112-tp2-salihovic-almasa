@@ -51,3 +51,8 @@ html:has(.menu:popover-open) {
         transition: none;
     }
 }
+
+.media--fullwidth {
+  width: 50%;
+  height: auto;
+}
